@@ -200,7 +200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 41298150}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 720191184}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: LoadLevel3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &41298150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +480,7 @@ GameObject:
   - component: {fileID: 720191183}
   - component: {fileID: 720191182}
   - component: {fileID: 720191181}
+  - component: {fileID: 720191184}
   m_Layer: 0
   m_Name: level1Button
   m_TagString: Untagged
@@ -537,7 +550,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 720191182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 720191184}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: LoadLevel1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &720191182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,6 +601,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720191179}
   m_CullTransparentMesh: 1
+--- !u!114 &720191184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720191179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba82e445a5087344eafed045433c8d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueButton: {fileID: 0}
+  clickSound: {fileID: 0}
+  guidePage: {fileID: 0}
 --- !u!1 &828370172
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +999,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1349315371}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 720191184}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: LoadLevel2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1349315371
 MonoBehaviour:
   m_ObjectHideFlags: 0

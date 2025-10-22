@@ -54,6 +54,24 @@ public class MenuScript : MonoBehaviour
         SceneManager.LoadScene("levelMenu"); // Загружаем первый уровень
     }
 
+    public void LoadLevel1()
+    {
+        SceneManager.LoadScene("level1");
+
+    }
+
+    public void LoadLevel2()
+    {
+        SceneManager.LoadScene("level2");
+
+    }
+
+    public void LoadLevel3()
+    {
+        SceneManager.LoadScene("level3");
+
+    }
+
     private void QuitGame()
     {
         Application.Quit();
