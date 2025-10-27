@@ -1,82 +1,40 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour
+public class Level1Controller : MonoBehaviour
 {
-    public static LevelManager Instance;
-    
-    // Флаги состояния сцены
-    public bool IsBackgroundSet { get; private set; }
-    public bool IsHeroPlaced { get; private set; }
-    public bool IsInformantPlaced { get; private set; }
-    public bool IsAlePlaced { get; private set; }
-    
-    // ДОБАВЬТЕ ЭТИ ПРОПУЩЕННЫЕ ФЛАГИ:
-    public bool AreRumorsDiscussed { get; private set; }
-    public bool IsMapAsked { get; private set; }
-    
-    void Awake()
+    private bool discussedRumors = false;
+    private bool gaveAle = false;
+
+    public void DiscussRumors()
     {
-        Instance = this;
+        discussedRumors = true;
+        Debug.Log("Вы обсудили слухи с информатором.");
     }
-    
-    // Вызывается после каждого изменения сцены
-    public void CheckSceneState()
+
+    public void GiveAle()
     {
-        // Теперь методы доступны, так как они публичные в SceneManager
-        IsBackgroundSet = GameSceneManager.Instance.backgroundSlot.childCount > 0;
-        IsHeroPlaced = GameSceneManager.Instance.IsCharacterAlreadyPlaced("Hero");
-        IsInformantPlaced = GameSceneManager.Instance.IsCharacterAlreadyPlaced("Informant");
-        IsAlePlaced = GameSceneManager.Instance.IsItemAlreadyPlaced("Ale");
-        
-        // Активируем/деактивируем кнопки действий в зависимости от состояния
-        UpdateActionButtons();
-    }
-    
-    private void UpdateActionButtons()
-    {
-        // "Обсудить слухи" доступно только когда есть герой и информатор
-        bool canDiscussRumors = IsHeroPlaced && IsInformantPlaced;
-        
-        // ИСПРАВЬТЕ ОПЕЧАТКУ: UlManager -> UIManager
-        UIManager.Instance.SetActionInteractable("DiscussRumors", canDiscussRumors);
-    }
-    
-    // Добавьте методы для установки флагов действий
-    public void SetRumorsDiscussed()
-    {
-        AreRumorsDiscussed = true;
-        UpdateActionButtons();
-    }
-    
-    public void SetMapAsked()
-    {
-        IsMapAsked = true;
-        CheckEndingConditions();
-    }
-    
-    // Методы для проверки условий концовок
-    public bool CheckGoodEndingConditions()
-    {
-        return IsAlePlaced && AreRumorsDiscussed && IsMapAsked;
-    }
-    
-    public bool CheckBadEndingConditions()
-    {
-        return !IsAlePlaced && AreRumorsDiscussed && IsMapAsked;
-    }
-    
-    private void CheckEndingConditions()
-    {
-        if (CheckGoodEndingConditions())
+        if (discussedRumors)
         {
-            // Запуск хорошей концовки
-            Debug.Log("Хорошая концовка! Карта получена.");
+            gaveAle = true;
+            Debug.Log("Информатор выпил эль и готов говорить.");
         }
-        else if (CheckBadEndingConditions())
+        else Debug.Log("Сначала нужно обсудить слухи.");
+    }
+
+    public void AskForMap()
+    {
+        if (discussedRumors && gaveAle)
         {
-            // Запуск плохой концовки
-            Debug.Log("Плохая концовка! Фальшивая карта.");
+            Debug.Log("Вы получили настоящую карту!");
+            PlayerPrefs.SetInt("Level1Good", 1);
         }
+        else if (discussedRumors)
+        {
+            Debug.Log("Информатор дал фальшивую карту...");
+            PlayerPrefs.SetInt("Level1Good", 0);
+        }
+
+        SceneManager.LoadScene("LevelSelect");
     }
 }
