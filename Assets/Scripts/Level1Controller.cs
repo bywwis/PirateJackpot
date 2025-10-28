@@ -3,8 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class Level1Controller : MonoBehaviour
 {
-    private bool discussedRumors = false;
-    private bool gaveAle = false;
+    public bool discussedRumors = false;
+    public bool gaveAle = false;
+
+    public bool DiscussedRumors => discussedRumors;
+    public bool GaveAle => gaveAle;
 
     public void DiscussRumors()
     {
