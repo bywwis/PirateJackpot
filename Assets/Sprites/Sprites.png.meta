@@ -1176,7 +1176,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 222
-        y: 834
+        y: 833
         width: 100
         height: 16
       alignment: 0
@@ -1347,6 +1347,336 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: "Background_\u0421abinet"
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 745
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8140c35a4f19a46a8881bba37d4f15
+      internalID: -1164244056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_ExploreMap
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 774
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8560b128af88e1469c9caa89e226f6c
+      internalID: 889633507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_ExploreLegend
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 777
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bcc74211038904e8779ccadb2779dc
+      internalID: -4789670105439411607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Lvl2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 728
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3240e1c965efdeb4f9a8c6b0cb43163a
+      internalID: 7061801754131594114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Compare
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 726
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35844781c3547c14ba893b7038abb705
+      internalID: -7377819553374844296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl2_ExploreMap
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 694
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bdde1fc5fa26f4cbe79a14ce1ac605
+      internalID: -638443171332479689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl2_ExploreLegend
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 694
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39acf1e797e12434895bbdc60b2d650f
+      internalID: -1428572451713796752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl2_Compare
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 694
+        width: 44
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50037c28a2ee4064a819f073372c5bae
+      internalID: 7411919347176863388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl2_Cabinet
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 694
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94162758a0a8284e92c73f96bdc5da3
+      internalID: -8796573629370075563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl2_ExploreMap_Highlight
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 656
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fccc3610e95a7449f2e04feaa94fd8
+      internalID: -8705658455517951556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl2_ExploreLegend_Highlight
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 656
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3eded62e48bd74ba3857003ae48b9d
+      internalID: 304646797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl2_Compare_Highlight
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 656
+        width: 46
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc514c00cdb4ae4ea71f78f99675826
+      internalID: 1458977596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl2_Cabinet_Highlight
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 656
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf25da817482b04d84a4b5f2f6f0728
+      internalID: 1977904727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Retry
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 837
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3427063bd8cdcf34087d206bce3b2768
+      internalID: 7791742886103884341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Retry_Highlight
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 812
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 825b313f4913a4b43b1a016f2a28bffd
+      internalID: 394738354570393740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1364,6 +1694,7 @@ TextureImporter:
       Ale: -1594810646448411930
       Ask_Map: -3487052741193606764
       Background_Tavern: -5030391481572952118
+      "Background_\u0421abinet": -1164244056
       Button_Back: -8365750937214216071
       Button_Back_Highlight: 3303002403084586578
       Button_Continue: -6369610067278917079
@@ -1388,13 +1719,28 @@ TextureImporter:
       Button_Lvl1_Info_Highlight: -6030460287462463701
       Button_Lvl1_Tavern: -263089634459758618
       Button_Lvl1_Tavern_Highlight: 6174724510220392764
+      Button_Lvl2_Cabinet: -8796573629370075563
+      Button_Lvl2_Cabinet_Highlight: 1977904727
+      Button_Lvl2_Compare: 7411919347176863388
+      Button_Lvl2_Compare_Highlight: 1458977596
+      Button_Lvl2_Explore: 304646797
+      Button_Lvl2_ExploreLegend: -1428572451713796752
+      Button_Lvl2_ExploreLegend_Highlight: 304646797
+      Button_Lvl2_ExploreMap: -638443171332479689
+      Button_Lvl2_ExploreMap_Highlight: -8705658455517951556
       Button_Play: 2981005580321115988
       Button_Play_Highlight: -7989478272681254030
+      Button_Retry: 7791742886103884341
+      Button_Retry_Highlight: 394738354570393740
       Chat_Chest: 7118791026978663043
       Drunk_Info: -7220104002862819407
       Drunk_Info_WithMap: -5261703756593297960
       Game_Title: 4773600122041589604
       Hero: -6810194602936740105
+      Hero_Compare: -7377819553374844296
+      Hero_ExploreLegend: -4789670105439411607
+      Hero_ExploreMap: 889633507
+      Hero_Lvl2: 7061801754131594114
       Info: 4774595779057751234
       Info_WithMap: -3873947796019678531
       Level1_Title: 4649150321829457272
@@ -1404,40 +1750,31 @@ TextureImporter:
       LevelMenu_Background: -2064149271191180511
       Scene: 8279819551763339774
       Scene_Highlight: 7010537895803775351
-      Sprites_1: -4789670105439411607
-      Sprites_12: 7791742886103884341
-      Sprites_13: 394738354570393740
       Sprites_15: 7960299501354929935
       Sprites_16: 1579531326687846966
       Sprites_17: 7188930153578278880
       Sprites_19: 3455609540856221501
-      Sprites_2: 7061801754131594114
       Sprites_21: -1059341289296395630
       Sprites_22: 8097644648361003729
       Sprites_24: 1571997993387287584
       Sprites_25: -975749167277906879
       Sprites_26: 6638901707931224523
-      Sprites_3: -7377819553374844296
       Sprites_38: 6077751805537155827
       Sprites_39: -6907802367980946021
-      Sprites_4: -638443171332479689
       Sprites_40: -5245793276582378072
       Sprites_41: 5971726572185723309
       Sprites_42: 6114485935416625835
       Sprites_43: 1983006174369966622
       Sprites_44: 7806370017998246849
-      Sprites_5: -1428572451713796752
       Sprites_55: -8316139679076634226
       Sprites_56: 7338269963166574067
       Sprites_57: 8972056133404136798
       Sprites_58: 1408226847623852857
       Sprites_59: -8372087688738955256
-      Sprites_6: 7411919347176863388
       Sprites_60: -6473330857520264552
       Sprites_61: -3521390567209173791
       Sprites_63: 3464579029577064229
       Sprites_65: 7666360481974078654
-      Sprites_7: -8796573629370075563
       Sprites_71: 3357211796325774088
       Sprites_72: 101638914394045216
       Sprites_73: 1354698784856487849
@@ -1446,7 +1783,6 @@ TextureImporter:
       Sprites_76: -7486870663118550996
       Sprites_77: 9151806924843895631
       Sprites_78: -1809803027063173784
-      Sprites_8: -8705658455517951556
       Sprites_84: -4059440920082776338
       Sprites_85: -6459868595381777773
       Sprites_86: 583989037140185989

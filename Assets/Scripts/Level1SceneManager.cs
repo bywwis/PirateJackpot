@@ -29,7 +29,8 @@ public class Level1SceneManager : MonoBehaviour
     public GameObject mainHero3;
     public GameObject inform3;
     public GameObject askMap3;
-    
+    public GameObject inform3GoodEnd;
+
     [Header("Кнопки действий")]
     public Button buttonHero;
     public Button buttonInfo;
@@ -38,7 +39,6 @@ public class Level1SceneManager : MonoBehaviour
     public Button buttonAle;
     public Button buttonGet;
     public Button backButton;
-    public Button cancelButton;
 
     private Level1Controller levelController;
     private int currentScene = 1;
@@ -96,6 +96,7 @@ public class Level1SceneManager : MonoBehaviour
         mainHero3.SetActive(false);
         inform3.SetActive(false);
         askMap3.SetActive(false); // добавляем
+        inform3GoodEnd.SetActive(false);
     }
 
     // Обновление интерфейса в зависимости от текущей сцены
@@ -121,19 +122,17 @@ public class Level1SceneManager : MonoBehaviour
         bool heroVisible = mainHero1.activeSelf;
         bool informantVisible = inform1.activeSelf;
         bool tavernVisible = tavern1.activeSelf;
-        
+        bool chatVisible = chatChest1.activeSelf;
+
         buttonHero.interactable = !heroVisible;
         buttonInfo.interactable = !informantVisible;
         buttonTavern.interactable = !tavernVisible;
-        buttonChat.interactable = heroVisible && informantVisible && tavernVisible;
+        buttonChat.interactable = heroVisible && informantVisible && tavernVisible && !chatVisible;
         buttonAle.interactable = false;
         buttonGet.interactable = false;
         
-        backButton.interactable = false;
-        cancelButton.interactable = heroVisible || informantVisible || tavernVisible;
-        
         // Делаем кнопки навигации всегда доступными
-        backButton.interactable = currentScene > 1;
+       // backButton.interactable = currentScene > 1;
     }
 
     void UpdateScene2UI()
@@ -141,36 +140,36 @@ public class Level1SceneManager : MonoBehaviour
         bool heroVisible = mainHero2.activeSelf;
         bool informantVisible = inform2.activeSelf || inform2Norm.activeSelf || inform2BadEnd.activeSelf;
         bool tavernVisible = tavern2.activeSelf;
-        bool aleVisible = ale2.activeSelf;
-        
+        bool aleVisible = ale2.activeSelf; 
+        bool getVisible = askMap2.activeSelf;
+
         buttonHero.interactable = !heroVisible;
         buttonInfo.interactable = !informantVisible;
         buttonTavern.interactable = !tavernVisible;
         buttonChat.interactable = false;
-        buttonAle.interactable = heroVisible && informantVisible && tavernVisible && !aleVisible;
-        buttonGet.interactable = heroVisible && informantVisible && tavernVisible;
+        buttonAle.interactable = heroVisible && informantVisible && tavernVisible && !aleVisible && !getVisible;
+        buttonGet.interactable = heroVisible && informantVisible && tavernVisible && !getVisible && !aleVisible;
         
         // Делаем кнопки навигации всегда доступными
-        backButton.interactable = currentScene > 1;
-        cancelButton.interactable = heroVisible || informantVisible || tavernVisible || aleVisible;
+        //backButton.interactable = currentScene > 1;
     }
 
     void UpdateScene3UI()
     {
         bool heroVisible = mainHero3.activeSelf;
-        bool informantVisible = inform3.activeSelf;
+        bool informantVisible = inform3.activeSelf || inform3GoodEnd.activeSelf;
         bool tavernVisible = tavern3.activeSelf;
-        
+        bool getVisible = askMap3.activeSelf;
+
         buttonHero.interactable = !heroVisible;
         buttonInfo.interactable = !informantVisible;
         buttonTavern.interactable = !tavernVisible;
         buttonChat.interactable = false;
         buttonAle.interactable = false;
-        buttonGet.interactable = heroVisible && informantVisible && tavernVisible;
+        buttonGet.interactable = heroVisible && informantVisible && tavernVisible && !getVisible;
         
         // Делаем кнопки навигации всегда доступными
-        backButton.interactable = currentScene > 1;
-        cancelButton.interactable = heroVisible || informantVisible || tavernVisible;
+        //backButton.interactable = currentScene > 1;
     }
 
     // === МЕТОДЫ ДЛЯ КНОПОК ===
@@ -314,6 +313,7 @@ public class Level1SceneManager : MonoBehaviour
                 // Показываем результат перед переходом
                 StartCoroutine(ShowGoodEndingAndTransition());
             }
+            UpdateUI();
         }
         else if (currentScene == 3 && mainHero3.activeSelf && inform3.activeSelf && tavern3.activeSelf)
         {
@@ -334,6 +334,7 @@ public class Level1SceneManager : MonoBehaviour
                 PlayerPrefs.SetInt("Level1Good", 0);
                 StartCoroutine(ShowBadEndingAndTransition());
             }
+            UpdateUI();
         }
         else
         {
@@ -369,9 +370,14 @@ public class Level1SceneManager : MonoBehaviour
     // Корутина для показа хорошей концовки с задержкой
     private IEnumerator ShowGoodEndingAndTransition()
     {
+        if (inform3GoodEnd != null)
+        {
+            inform3.SetActive(false);
+            inform3GoodEnd.SetActive(true);
+        }
         // Здесь можно добавить визуальные эффекты для хорошей концовки
         // Например, изменить спрайты, показать сообщение и т.д.
-        
+
         Debug.Log("Герой получает настоящую карту!");
         
         // Ждем 2 секунды перед переходом
@@ -379,18 +385,6 @@ public class Level1SceneManager : MonoBehaviour
         
         // Переходим к выбору уровней
         UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
-    }
-
-    public void PreviousScene()
-    {
-        if (currentScene == 2)
-        {
-            TransitionToScene1();
-        }
-        else if (currentScene == 3)
-        {
-            TransitionToScene2();
-        }
     }
 
     // === АВТОМАТИЧЕСКИЕ ПЕРЕХОДЫ МЕЖДУ СЦЕНАМИ ===
@@ -442,38 +436,5 @@ public class Level1SceneManager : MonoBehaviour
         currentScene = 1;
         UpdateUI();
         Debug.Log("Возврат к первой сцене");
-    }
-
-    public void CancelAction()
-    {
-        switch (currentScene)
-        {
-            case 1:
-                mainHero1.SetActive(false);
-                inform1.SetActive(false);
-                tavern1.SetActive(false);
-                chatChest1.SetActive(false);
-                break;
-
-            case 2:
-                mainHero2.SetActive(false);
-                inform2.SetActive(false);
-                inform2Norm.SetActive(false);
-                inform2BadEnd.SetActive(false);
-                tavern2.SetActive(false);
-                ale2.SetActive(false);
-                askMap2.SetActive(false); // добавляем скрытие askMap2
-                break;
-
-            case 3:
-                mainHero3.SetActive(false);
-                inform3.SetActive(false);
-                tavern3.SetActive(false);
-                askMap3.SetActive(false); // добавляем скрытие askMap3
-                break;
-        }
-
-        UpdateUI();
-        Debug.Log("Все объекты скрыты с текущей сцены");
     }
 }
