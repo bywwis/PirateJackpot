@@ -1946,6 +1946,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1703110710}
   - {fileID: 1374422475}
   - {fileID: 950811469}
   - {fileID: 1206476075}
@@ -2110,6 +2111,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611745057}
+  m_CullTransparentMesh: 1
+--- !u!1 &1703110709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1703110710}
+  - component: {fileID: 1703110712}
+  - component: {fileID: 1703110711}
+  m_Layer: 0
+  m_Name: inform3Norm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1703110710
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703110709}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999448, y: 0.9999448, z: 0.9999448}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1456464897}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -53.90001, y: -4.0999985}
+  m_SizeDelta: {x: 16, y: 22}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1703110711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703110709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 4774595779057751234, guid: c52e960905b51f345bdd5bd79a5a6d14, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1703110712
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703110709}
   m_CullTransparentMesh: 1
 --- !u!1 &1717703804
 GameObject:
@@ -2957,12 +3033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1a35d15ab81c145baa18a25eca5a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 509278300}
-  informant: {fileID: 2090262842}
-  ale: {fileID: 708242968}
-  tavern: {fileID: 0}
-  chat: {fileID: 0}
-  get: {fileID: 0}
 --- !u!114 &2090512569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2984,7 +3054,9 @@ MonoBehaviour:
   chatChest1: {fileID: 2129791507}
   tavern2: {fileID: 2043828766}
   mainHero2: {fileID: 1744661636}
-  inform2: {fileID: 15485020}
+  inform2: {fileID: 1983268663}
+  inform2Norm: {fileID: 15485020}
+  inform2BadEnd: {fileID: 658237049}
   ale2: {fileID: 708242968}
   askMap2: {fileID: 1868532961}
   tavern3: {fileID: 1374422474}

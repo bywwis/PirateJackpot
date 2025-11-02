@@ -18,7 +18,9 @@ public class Level1SceneManager : MonoBehaviour
     [Header("Объекты сцены 2")]
     public GameObject tavern2;
     public GameObject mainHero2;
-    public GameObject inform2;
+    public GameObject inform2; 
+    public GameObject inform2Norm; 
+    public GameObject inform2BadEnd;
     public GameObject ale2;
     public GameObject askMap2;
     
@@ -59,7 +61,7 @@ public class Level1SceneManager : MonoBehaviour
     {
         currentScene = 1;
         
-        // Активируем все сцены, но показываем только первую
+        // Активируем все сцены и оставляем их активными
         scene1.SetActive(true);
         scene2.SetActive(true);
         scene3.SetActive(true);
@@ -67,7 +69,7 @@ public class Level1SceneManager : MonoBehaviour
         // Настраиваем начальное состояние всех объектов
         ResetAllScenes();
         
-        // Показываем только первую сцену
+        // Обновляем UI для первой сцены
         UpdateUI();
     }
 
@@ -83,37 +85,32 @@ public class Level1SceneManager : MonoBehaviour
         tavern2.SetActive(false);
         mainHero2.SetActive(false);
         inform2.SetActive(false);
+        inform2Norm.SetActive(false);
+        inform2BadEnd.SetActive(false);
         ale2.SetActive(false);
-        askMap2.SetActive(false);
+        askMap2.SetActive(false); // добавляем
+        askMap2.SetActive(false); // добавляем
         
         // Сцена 3
         tavern3.SetActive(false);
         mainHero3.SetActive(false);
         inform3.SetActive(false);
-        askMap3.SetActive(false);
+        askMap3.SetActive(false); // добавляем
     }
 
     // Обновление интерфейса в зависимости от текущей сцены
     void UpdateUI()
     {
-        // Скрываем все сцены
-        scene1.SetActive(false);
-        scene2.SetActive(false);
-        scene3.SetActive(false);
-
-        // Показываем только текущую сцену
+        // Просто обновляем UI для текущей сцены
         switch (currentScene)
         {
             case 1:
-                scene1.SetActive(true);
                 UpdateScene1UI();
                 break;
             case 2:
-                scene2.SetActive(true);
                 UpdateScene2UI();
                 break;
             case 3:
-                scene3.SetActive(true);
                 UpdateScene3UI();
                 break;
         }
@@ -134,12 +131,15 @@ public class Level1SceneManager : MonoBehaviour
         
         backButton.interactable = false;
         cancelButton.interactable = heroVisible || informantVisible || tavernVisible;
+        
+        // Делаем кнопки навигации всегда доступными
+        backButton.interactable = currentScene > 1;
     }
 
     void UpdateScene2UI()
     {
         bool heroVisible = mainHero2.activeSelf;
-        bool informantVisible = inform2.activeSelf;
+        bool informantVisible = inform2.activeSelf || inform2Norm.activeSelf || inform2BadEnd.activeSelf;
         bool tavernVisible = tavern2.activeSelf;
         bool aleVisible = ale2.activeSelf;
         
@@ -148,9 +148,10 @@ public class Level1SceneManager : MonoBehaviour
         buttonTavern.interactable = !tavernVisible;
         buttonChat.interactable = false;
         buttonAle.interactable = heroVisible && informantVisible && tavernVisible && !aleVisible;
-        buttonGet.interactable = heroVisible && informantVisible && tavernVisible; // Можно просить карту даже без эля!
+        buttonGet.interactable = heroVisible && informantVisible && tavernVisible;
         
-        backButton.interactable = true;
+        // Делаем кнопки навигации всегда доступными
+        backButton.interactable = currentScene > 1;
         cancelButton.interactable = heroVisible || informantVisible || tavernVisible || aleVisible;
     }
 
@@ -167,7 +168,8 @@ public class Level1SceneManager : MonoBehaviour
         buttonAle.interactable = false;
         buttonGet.interactable = heroVisible && informantVisible && tavernVisible;
         
-        backButton.interactable = true;
+        // Делаем кнопки навигации всегда доступными
+        backButton.interactable = currentScene > 1;
         cancelButton.interactable = heroVisible || informantVisible || tavernVisible;
     }
 
@@ -198,7 +200,22 @@ public class Level1SceneManager : MonoBehaviour
                 inform1.SetActive(true);
                 break;
             case 2:
-                inform2.SetActive(true);
+                // В сцене 2 показываем соответствующий спрайт информатора
+                if (levelController.DiscussedRumors && levelController.GaveAle)
+                {
+                    // Если напоили элем - показываем довольного информатора
+                    inform2Norm.SetActive(true);
+                }
+                else if (levelController.DiscussedRumors)
+                {
+                    // Если только обсудили слухи - показываем обычного информатора
+                    inform2.SetActive(true);
+                }
+                else
+                {
+                    // Если ничего не сделали - показываем обычного информатора
+                    inform2.SetActive(true);
+                }
                 break;
             case 3:
                 inform3.SetActive(true);
@@ -249,6 +266,11 @@ public class Level1SceneManager : MonoBehaviour
         {
             levelController.GiveAle();
             ale2.SetActive(true);
+            
+            // Меняем спрайт информатора на "напоенного"
+            inform2.SetActive(false);
+            inform2Norm.SetActive(true);
+            
             UpdateUI();
             Debug.Log("Эль подан информатору - путь к хорошей концовке открыт!");
             
@@ -263,43 +285,100 @@ public class Level1SceneManager : MonoBehaviour
 
     public void AskForMap()
     {
-        if (currentScene == 2 && mainHero2.activeSelf && inform2.activeSelf && tavern2.activeSelf)
+        if (currentScene == 2 && mainHero2.activeSelf && (inform2.activeSelf || inform2Norm.activeSelf) && tavern2.activeSelf)
         {
+            // Активируем объект askMap2 для визуального отображения
+            askMap2.SetActive(true);
+            
             // Плохая концовка - просим карту без эля
             if (!ale2.activeSelf)
             {
                 Debug.Log("Плохая концовка: Вы получили фальшивую карту!");
+                
+                // Меняем спрайт на плохую концовку
+                inform2.SetActive(false);
+                inform2Norm.SetActive(false);
+                inform2BadEnd.SetActive(true);
+                
                 PlayerPrefs.SetInt("Level1Good", 0);
-                UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
+                
+                // Показываем результат перед переходом
+                StartCoroutine(ShowBadEndingAndTransition());
             }
             else
             {
                 // Хорошая концовка
                 Debug.Log("Хорошая концовка: Вы получили настоящую карту!");
                 PlayerPrefs.SetInt("Level1Good", 1);
-                UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
+                
+                // Показываем результат перед переходом
+                StartCoroutine(ShowGoodEndingAndTransition());
             }
         }
         else if (currentScene == 3 && mainHero3.activeSelf && inform3.activeSelf && tavern3.activeSelf)
         {
+            // Активируем объект askMap3 для визуального отображения
+            askMap3.SetActive(true);
+            
             // Альтернативный путь - через сцену 3
             // Проверяем, был ли подан эль через Level1Controller
             if (levelController.GaveAle)
             {
                 Debug.Log("Хорошая концовка: Вы получили настоящую карту!");
                 PlayerPrefs.SetInt("Level1Good", 1);
+                StartCoroutine(ShowGoodEndingAndTransition());
             }
             else
             {
                 Debug.Log("Плохая концовка: Вы получили фальшивую карту!");
                 PlayerPrefs.SetInt("Level1Good", 0);
+                StartCoroutine(ShowBadEndingAndTransition());
             }
-            UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
         }
         else
         {
             Debug.Log("Для запроса карты нужно: герой, информатор и таверна на сцене!");
         }
+    }
+
+    // Корутина для показа плохой концовки с задержкой
+    private IEnumerator ShowBadEndingAndTransition()
+    {
+        // Активируем спрайт плохой концовки
+        if (inform2BadEnd != null) 
+        {
+            inform2.SetActive(false); // Скрываем обычного информатора
+            inform2BadEnd.SetActive(true); // Показываем информатора для плохой концовки
+        }
+        
+        Debug.Log("Герой получает фальшивую карту...");
+        
+        // Ждем 2 секунды перед переходом
+        yield return new WaitForSeconds(2f);
+        
+        // Показываем анимацию или сообщение о том, что героя съела акула
+        Debug.Log("Героя съедает акула!");
+        
+        // Ждем еще 2 секунды для демонстрации результата
+        yield return new WaitForSeconds(2f);
+        
+        // Переходим к выбору уровней
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
+    }
+
+    // Корутина для показа хорошей концовки с задержкой
+    private IEnumerator ShowGoodEndingAndTransition()
+    {
+        // Здесь можно добавить визуальные эффекты для хорошей концовки
+        // Например, изменить спрайты, показать сообщение и т.д.
+        
+        Debug.Log("Герой получает настоящую карту!");
+        
+        // Ждем 2 секунды перед переходом
+        yield return new WaitForSeconds(2f);
+        
+        // Переходим к выбору уровней
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
     }
 
     public void PreviousScene()
@@ -319,20 +398,33 @@ public class Level1SceneManager : MonoBehaviour
     private IEnumerator AutoTransitionToScene2()
     {
         Debug.Log("Автоматический переход к сцене 2 через 2 секунды...");
+        
+        // Можно добавить анимацию или эффект перехода
         yield return new WaitForSeconds(2f);
+        
         TransitionToScene2();
+        
+        // Показываем подсказку для игрока
+        Debug.Log("Теперь вы можете подать эль информатору или сразу попросить карту");
     }
 
     private IEnumerator AutoTransitionToScene3()
     {
         Debug.Log("Автоматический переход к сцене 3 через 2 секунды...");
+        
+        // Можно добавить анимацию или эффект перехода
         yield return new WaitForSeconds(2f);
+        
         TransitionToScene3();
+        
+        // Показываем подсказку для игрока
+        Debug.Log("Теперь вы можете попросить карту у информатора");
     }
 
     private void TransitionToScene2()
     {
         currentScene = 2;
+        // НЕ скрываем предыдущую сцену - scene1 остается активной
         UpdateUI();
         Debug.Log("Переход ко второй сцене: Можно подать эль или сразу попросить карту");
     }
@@ -340,6 +432,7 @@ public class Level1SceneManager : MonoBehaviour
     private void TransitionToScene3()
     {
         currentScene = 3;
+        // НЕ скрываем предыдущие сцены - scene1 и scene2 остаются активными
         UpdateUI();
         Debug.Log("Переход к третьей сцене: Можно попросить карту");
     }
@@ -365,14 +458,18 @@ public class Level1SceneManager : MonoBehaviour
             case 2:
                 mainHero2.SetActive(false);
                 inform2.SetActive(false);
+                inform2Norm.SetActive(false);
+                inform2BadEnd.SetActive(false);
                 tavern2.SetActive(false);
                 ale2.SetActive(false);
+                askMap2.SetActive(false); // добавляем скрытие askMap2
                 break;
 
             case 3:
                 mainHero3.SetActive(false);
                 inform3.SetActive(false);
                 tavern3.SetActive(false);
+                askMap3.SetActive(false); // добавляем скрытие askMap3
                 break;
         }
 
