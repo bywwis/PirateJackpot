@@ -181,19 +181,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 13799238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Level1SceneManager, Assembly-CSharp
-        m_MethodName: PreviousScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &13799238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +766,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 717684564}
+  - component: {fileID: 717684566}
+  - component: {fileID: 717684565}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -804,6 +794,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &717684565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717684563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee62df2585bee944aee021f925fe950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  studiedMap: 0
+  studiedLegend: 0
+  comparedWithSeaMap: 0
+--- !u!114 &717684566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717684563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc46d96a9ffcb94eba877f318ba4f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene1: {fileID: 678689943}
+  scene2: {fileID: 656124679}
+  scene3: {fileID: 1119401243}
+  cabinet1: {fileID: 314243375}
+  mainHero1: {fileID: 1587498612}
+  mainHeroExploreMap: {fileID: 1652414286}
+  cabinet2: {fileID: 1060231143}
+  mainHero2: {fileID: 939319632}
+  mainHeroExploreLegend: {fileID: 2132752872}
+  mainHeroCompare: {fileID: 2006031218}
+  cabinet3: {fileID: 1111769791}
+  mainHero3: {fileID: 1897269607}
+  mainHeroCompareScene3: {fileID: 49372291}
+  buttonHero: {fileID: 264965755}
+  buttonCabinet: {fileID: 2043652470}
+  buttonExploreMap: {fileID: 1855975911}
+  buttonExploreLegend: {fileID: 1844683553}
+  buttonCompare: {fileID: 1758357356}
+  backToMenuButton: {fileID: 13799237}
 --- !u!1 &939319632
 GameObject:
   m_ObjectHideFlags: 0
