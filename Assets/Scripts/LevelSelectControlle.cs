@@ -20,12 +20,12 @@ public class LevelSelectController : MonoBehaviour
 
     public void OpenLevel2()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("level2");
     }
 
     public void OpenLevel31()
     {
-        SceneManager.LoadScene("Level31");
+        SceneManager.LoadScene("level31");
     }
 
     public void BackToMenu()

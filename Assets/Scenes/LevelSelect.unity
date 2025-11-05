@@ -203,8 +203,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1639691545}
         m_TargetAssemblyTypeName: LevelSelectController, Assembly-CSharp
-        m_MethodName: OpenLevel
-        m_Mode: 5
+        m_MethodName: OpenLevel31
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1010,13 +1010,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1639691543}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1639691545}
+        m_TargetAssemblyTypeName: LevelSelectController, Assembly-CSharp
+        m_MethodName: OpenLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
