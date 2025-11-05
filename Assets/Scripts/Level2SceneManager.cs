@@ -116,8 +116,8 @@ public class Level2SceneManager : MonoBehaviour
         bool cabinetVisible = cabinet1.activeSelf;
         bool mapExplored = mainHeroExploreMap.activeSelf;
 
-        buttonHero.interactable = !heroVisible;
         buttonCabinet.interactable = !cabinetVisible;
+        buttonHero.interactable = cabinetVisible && !heroVisible && !mapExplored;
         buttonExploreMap.interactable = heroVisible && cabinetVisible && !mapExplored;
         buttonExploreLegend.interactable = false;
         buttonCompare.interactable = false;
@@ -131,8 +131,8 @@ public class Level2SceneManager : MonoBehaviour
         bool legendExplored = mainHeroExploreLegend.activeSelf;
         bool compared = mainHeroCompare.activeSelf;
 
-        buttonHero.interactable = !heroVisible;
         buttonCabinet.interactable = !cabinetVisible;
+        buttonHero.interactable = cabinetVisible && !heroVisible && !legendExplored;
         buttonExploreMap.interactable = false;
         buttonExploreLegend.interactable = heroVisible && cabinetVisible && mapExplored && !legendExplored && !compared;
         buttonCompare.interactable = heroVisible && cabinetVisible && mapExplored && !compared;
@@ -144,8 +144,8 @@ public class Level2SceneManager : MonoBehaviour
         bool cabinetVisible = cabinet3.activeSelf;
         bool compared = mainHeroCompareScene3.activeSelf;
 
-        buttonHero.interactable = !heroVisible;
         buttonCabinet.interactable = !cabinetVisible;
+        buttonHero.interactable = cabinetVisible && !heroVisible && !compared;
         buttonExploreMap.interactable = false;
         buttonExploreLegend.interactable = false;
         buttonCompare.interactable = heroVisible && cabinetVisible && !compared;
@@ -287,14 +287,5 @@ public class Level2SceneManager : MonoBehaviour
     private void BackToMenu()
     {
         SceneManager.LoadScene("LevelSelect");
-    }
-
-    public void GoBack()
-    {
-        if (currentScene > 1)
-        {
-            currentScene--;
-            UpdateUI();
-        }
     }
 }

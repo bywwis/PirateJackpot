@@ -125,9 +125,9 @@ public class Level1SceneManager : MonoBehaviour
         bool tavernVisible = tavern1.activeSelf;
         bool chatVisible = chatChest1.activeSelf;
 
-        buttonHero.interactable = !heroVisible;
-        buttonInfo.interactable = !informantVisible;
         buttonTavern.interactable = !tavernVisible;
+        buttonInfo.interactable = tavernVisible && !informantVisible;
+        buttonHero.interactable = tavernVisible && !heroVisible;
         buttonChat.interactable = heroVisible && informantVisible && tavernVisible && !chatVisible;
         buttonAle.interactable = false;
         buttonGet.interactable = false;
@@ -144,9 +144,9 @@ public class Level1SceneManager : MonoBehaviour
         bool aleVisible = ale2.activeSelf;
         bool getVisible = askMap2.activeSelf;
 
-        buttonHero.interactable = !heroVisible;
-        buttonInfo.interactable = !informantVisible;
         buttonTavern.interactable = !tavernVisible;
+        buttonInfo.interactable = tavernVisible && !informantVisible;
+        buttonHero.interactable = tavernVisible && !heroVisible;
         buttonChat.interactable = false;
         buttonAle.interactable = heroVisible && informantVisible && tavernVisible && !aleVisible && !getVisible;
         buttonGet.interactable = heroVisible && informantVisible && tavernVisible && !getVisible && !aleVisible;
@@ -162,9 +162,9 @@ public class Level1SceneManager : MonoBehaviour
         bool tavernVisible = tavern3.activeSelf;
         bool getVisible = askMap3.activeSelf;
 
-        buttonHero.interactable = !heroVisible;
-        buttonInfo.interactable = !informantVisible;
         buttonTavern.interactable = !tavernVisible;
+        buttonInfo.interactable = tavernVisible && !informantVisible;
+        buttonHero.interactable = tavernVisible && !heroVisible;
         buttonChat.interactable = false;
         buttonAle.interactable = false;
         buttonGet.interactable = heroVisible && informantVisible && tavernVisible && !getVisible;
