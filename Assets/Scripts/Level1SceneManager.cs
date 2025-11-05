@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Level1SceneManager : MonoBehaviour
 {
@@ -436,5 +437,10 @@ public class Level1SceneManager : MonoBehaviour
         currentScene = 1;
         UpdateUI();
         Debug.Log("Возврат к первой сцене");
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("LevelSelect");
     }
 }
