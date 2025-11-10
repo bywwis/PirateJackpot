@@ -1677,6 +1677,490 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BadEnd1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 499
+        width: 240
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9677bf4ce0c52c94f962cd0365ec3627
+      internalID: 82047062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadEnd2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 199
+        width: 240
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc398cb31576404590574d397e9ea55
+      internalID: -1545305386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GoodEnd
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 345
+        width: 240
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad9a29e8a13a6804c9f2154033830462
+      internalID: -1746115241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_Beach
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 567
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09471128aefd4a64d90e754de92a97b6
+      internalID: 1054035005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_Beach_Cross
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 567
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7439c3a5727459b43a990c24ae96ab4d
+      internalID: -129946487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Background_Beach_Piit
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 567
+        width: 64
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fc7ce05bb353841a63c1fbe6c09b02
+      internalID: -1248366657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Explore
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 525
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d748a6839babd14bb9bebd6a9114ee1
+      internalID: -794698960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dig
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 525
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f117227f9323b9f49b1ab5c138b5a66d
+      internalID: -397706532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 551
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4dee95fa9510214b8e34cdec46231d4
+      internalID: 1563994206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chest_Open
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 535
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f683346858c7f48a518faf2cbe92f0
+      internalID: -865651867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Bone
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 484
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 842c6eb697e5602438927900a82f3c4d
+      internalID: -2093616756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bone
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 522
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43aaafb45c667514daeb5ebe3f1554a2
+      internalID: -1115608013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Open
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 533
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b2fd1fbb9953b47804c311d7e3e56a
+      internalID: 1877316715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Open_Highlight
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 468
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba6432464bc82648a32c6ebf24d7a80
+      internalID: 2112953320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Dig_Highlight
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 468
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858dac5ec0c21274d832ce8a9c0534f3
+      internalID: 1247948316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Dig
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 533
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a28d27ce8401d549af59be68defdba9
+      internalID: -2129004687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Explore
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 533
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a89a1926034154eba3d9062b3bfbea
+      internalID: 246993396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Beach
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 533
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f12b457cedf3644e95e53cdb60553a6
+      internalID: 1899711110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Explore_Bone
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 501
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626cde11ffee4aa4f8cbba421ed4fbe7
+      internalID: -1123769269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Explore_Highlight
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 468
+        width: 39
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdf906150ff51b439e314e504485bb3
+      internalID: -700410182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Beach_Highlight
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 468
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf554050bbcb0c4abc5dd656b2c78ce
+      internalID: -909453357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button_Lvl3_Explore_Bone_Highlight
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 436
+        width: 39
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176cb556b75218f4ba6e1e3d725d79c8
+      internalID: -510605754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1693,8 +2177,14 @@ TextureImporter:
     nameFileIdTable:
       Ale: -1594810646448411930
       Ask_Map: -3487052741193606764
+      Background_Beach: 1054035005
+      Background_Beach_Cross: -129946487
+      Background_Beach_Piit: -1248366657
       Background_Tavern: -5030391481572952118
       "Background_\u0421abinet": -1164244056
+      BadEnd1: 82047062
+      BadEnd2: -1545305386
+      Bone: -1115608013
       Button_Back: -8365750937214216071
       Button_Back_Highlight: 3303002403084586578
       Button_Continue: -6369610067278917079
@@ -1728,16 +2218,33 @@ TextureImporter:
       Button_Lvl2_ExploreLegend_Highlight: 304646797
       Button_Lvl2_ExploreMap: -638443171332479689
       Button_Lvl2_ExploreMap_Highlight: -8705658455517951556
+      Button_Lvl3_: 1899711110
+      Button_Lvl3_Beach: 1899711110
+      Button_Lvl3_Beach_Highlight: -909453357
+      Button_Lvl3_Dig: -2129004687
+      Button_Lvl3_Dig_Highlight: 1247948316
+      Button_Lvl3_Explore: 246993396
+      Button_Lvl3_Explore_Bone: -1123769269
+      Button_Lvl3_Explore_Bone_Highlight: -510605754
+      Button_Lvl3_Explore_Highlight: -700410182
+      Button_Lvl3_Open: 1877316715
+      Button_Lvl3_Open_Highlight: 2112953320
       Button_Play: 2981005580321115988
       Button_Play_Highlight: -7989478272681254030
       Button_Retry: 7791742886103884341
       Button_Retry_Highlight: 394738354570393740
       Chat_Chest: 7118791026978663043
+      Chest: 1563994206
+      Chest_Open: -865651867
       Drunk_Info: -7220104002862819407
       Drunk_Info_WithMap: -5261703756593297960
       Game_Title: 4773600122041589604
+      GoodEnd: -1746115241
       Hero: -6810194602936740105
+      Hero_Bone: -2093616756
       Hero_Compare: -7377819553374844296
+      Hero_Dig: -397706532
+      Hero_Explore: -794698960
       Hero_ExploreLegend: -4789670105439411607
       Hero_ExploreMap: 889633507
       Hero_Lvl2: 7061801754131594114
@@ -1791,6 +2298,7 @@ TextureImporter:
       Sprites_89: 3420767355568788323
       Sprites_90: 9193603147421567555
       Sprites_91: -13204294254560827
+      pit: -1248366657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
