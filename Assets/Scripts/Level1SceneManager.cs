@@ -10,6 +10,9 @@ public class Level1SceneManager : MonoBehaviour
     public GameObject scene2;
     public GameObject scene3;
 
+    [Header("Плохая концовка")]
+    public GameObject badEnd;
+
     [Header("Объекты сцены 1")]
     public GameObject tavern1;
     public GameObject mainHero1;
@@ -359,13 +362,11 @@ public class Level1SceneManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         // Показываем анимацию или сообщение о том, что героя съела акула
+
         Debug.Log("Героя съедает акула!");
 
-        // Ждем еще 2 секунды для демонстрации результата
-        yield return new WaitForSeconds(2f);
-
-        // Переходим к выбору уровней
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
+        badEnd.SetActive(true);
+        
     }
 
     // Корутина для показа хорошей концовки с задержкой
@@ -442,5 +443,6 @@ public class Level1SceneManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene("LevelSelect");
+        badEnd.SetActive(false);
     }
 }
