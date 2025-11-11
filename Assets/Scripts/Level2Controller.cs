@@ -36,16 +36,21 @@ public class Level2Controller : MonoBehaviour
         {
             comparedWithSeaMap = true;
 
+            int endingType = 2; // По умолчанию плохая концовка
+            
             if (studiedLegend && studiedMap)
             {
                 Debug.Log("Вы правильно расшифровали карту! Концовка для уровня 3.1");
-                PlayerPrefs.SetInt("Level2Ending", 1); // 1 = хорошая концовка
+                endingType = 1; // Хорошая концовка
             }
             else
             {
                 Debug.Log("Вы неправильно расшифровали карту! Концовка для уровня 3.2");
-                PlayerPrefs.SetInt("Level2Ending", 2); // 2 = плохая концовка
+                endingType = 2; // Плохая концовка
             }
+
+            // Сохраняем прогресс
+            SaveLoadManager.SaveLevelProgress("Level2", endingType);
 
             // Переход к выбору уровней через 3 секунды
             Invoke("LoadLevelSelect", 3f);

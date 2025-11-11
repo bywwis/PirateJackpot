@@ -92,14 +92,13 @@ public class Level1SceneManager : MonoBehaviour
         inform2Norm.SetActive(false);
         inform2BadEnd.SetActive(false);
         ale2.SetActive(false);
-        askMap2.SetActive(false); // добавляем
-        askMap2.SetActive(false); // добавляем
+        askMap2.SetActive(false);
 
         // Сцена 3
         tavern3.SetActive(false);
         mainHero3.SetActive(false);
         inform3.SetActive(false);
-        askMap3.SetActive(false); // добавляем
+        askMap3.SetActive(false);
         inform3GoodEnd.SetActive(false);
     }
 
@@ -134,9 +133,6 @@ public class Level1SceneManager : MonoBehaviour
         buttonChat.interactable = heroVisible && informantVisible && tavernVisible && !chatVisible;
         buttonAle.interactable = false;
         buttonGet.interactable = false;
-
-        // Делаем кнопки навигации всегда доступными
-        // backButton.interactable = currentScene > 1;
     }
 
     void UpdateScene2UI()
@@ -153,9 +149,6 @@ public class Level1SceneManager : MonoBehaviour
         buttonChat.interactable = false;
         buttonAle.interactable = heroVisible && informantVisible && tavernVisible && !aleVisible && !getVisible;
         buttonGet.interactable = heroVisible && informantVisible && tavernVisible && !getVisible && !aleVisible;
-
-        // Делаем кнопки навигации всегда доступными
-        //backButton.interactable = currentScene > 1;
     }
 
     void UpdateScene3UI()
@@ -171,9 +164,6 @@ public class Level1SceneManager : MonoBehaviour
         buttonChat.interactable = false;
         buttonAle.interactable = false;
         buttonGet.interactable = heroVisible && informantVisible && tavernVisible && !getVisible;
-
-        // Делаем кнопки навигации всегда доступными
-        //backButton.interactable = currentScene > 1;
     }
 
     // === МЕТОДЫ ДЛЯ КНОПОК ===
@@ -249,6 +239,7 @@ public class Level1SceneManager : MonoBehaviour
     {
         if (currentScene == 1 && mainHero1.activeSelf && inform1.activeSelf && tavern1.activeSelf)
         {
+            // ВЫЗЫВАЕМ МЕТОД КОНТРОЛЛЕРА
             levelController.DiscussRumors();
             chatChest1.SetActive(true);
             UpdateUI();
@@ -267,6 +258,7 @@ public class Level1SceneManager : MonoBehaviour
     {
         if (currentScene == 2 && mainHero2.activeSelf && inform2.activeSelf && tavern2.activeSelf)
         {
+            // ВЫЗЫВАЕМ МЕТОД КОНТРОЛЛЕРА
             levelController.GiveAle();
             ale2.SetActive(true);
 
@@ -293,6 +285,9 @@ public class Level1SceneManager : MonoBehaviour
             // Активируем объект askMap2 для визуального отображения
             askMap2.SetActive(true);
 
+            // ВЫЗЫВАЕМ МЕТОД КОНТРОЛЛЕРА ДЛЯ СОХРАНЕНИЯ ПРОГРЕССА
+            levelController.AskForMap();
+
             // Плохая концовка - просим карту без эля
             if (!ale2.activeSelf)
             {
@@ -303,8 +298,6 @@ public class Level1SceneManager : MonoBehaviour
                 inform2Norm.SetActive(false);
                 inform2BadEnd.SetActive(true);
 
-                PlayerPrefs.SetInt("Level1Good", 0);
-
                 // Показываем результат перед переходом
                 StartCoroutine(ShowBadEndingAndTransition());
             }
@@ -312,7 +305,6 @@ public class Level1SceneManager : MonoBehaviour
             {
                 // Хорошая концовка
                 Debug.Log("Хорошая концовка: Вы получили настоящую карту!");
-                PlayerPrefs.SetInt("Level1Good", 1);
 
                 // Показываем результат перед переходом
                 StartCoroutine(ShowGoodEndingAndTransition());
@@ -324,18 +316,19 @@ public class Level1SceneManager : MonoBehaviour
             // Активируем объект askMap3 для визуального отображения
             askMap3.SetActive(true);
 
+            // ВЫЗЫВАЕМ МЕТОД КОНТРОЛЛЕРА ДЛЯ СОХРАНЕНИЯ ПРОГРЕССА
+            levelController.AskForMap();
+
             // Альтернативный путь - через сцену 3
             // Проверяем, был ли подан эль через Level1Controller
             if (levelController.GaveAle)
             {
                 Debug.Log("Хорошая концовка: Вы получили настоящую карту!");
-                PlayerPrefs.SetInt("Level1Good", 1);
                 StartCoroutine(ShowGoodEndingAndTransition());
             }
             else
             {
                 Debug.Log("Плохая концовка: Вы получили фальшивую карту!");
-                PlayerPrefs.SetInt("Level1Good", 0);
                 StartCoroutine(ShowBadEndingAndTransition());
             }
             UpdateUI();
@@ -362,11 +355,13 @@ public class Level1SceneManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         // Показываем анимацию или сообщение о том, что героя съела акула
-
         Debug.Log("Героя съедает акула!");
 
         badEnd.SetActive(true);
         
+        // Ждем еще 2 секунды перед переходом в меню выбора уровней
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("LevelSelect");
     }
 
     // Корутина для показа хорошей концовки с задержкой
@@ -386,7 +381,7 @@ public class Level1SceneManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         // Переходим к выбору уровней
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     // === АВТОМАТИЧЕСКИЕ ПЕРЕХОДЫ МЕЖДУ СЦЕНАМИ ===
@@ -428,16 +423,9 @@ public class Level1SceneManager : MonoBehaviour
     private void TransitionToScene3()
     {
         currentScene = 3;
-        // НЕ скрываем предыдущие сцены - scene1 и scene2 остаются активными
+        // НЕ скрываем предыдущие сцenes - scene1 и scene2 остаются активными
         UpdateUI();
         Debug.Log("Переход к третьей сцене: Можно попросить карту");
-    }
-
-    private void TransitionToScene1()
-    {
-        currentScene = 1;
-        UpdateUI();
-        Debug.Log("Возврат к первой сцене");
     }
 
     public void BackToMenu()

@@ -39,8 +39,10 @@ public class Level2SceneManager : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("Level1Good", 0) != 1)
+        // Используем систему сохранения вместо PlayerPrefs
+        if (!SaveLoadManager.IsLevelUnlocked("Level2"))
         {
+            Debug.Log("Level2 не доступен, возврат в LevelSelect");
             SceneManager.LoadScene("LevelSelect");
             return;
         }
