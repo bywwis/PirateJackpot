@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 312381683}
   - component: {fileID: 312381682}
   m_Layer: 0
-  m_Name: bone2
+  m_Name: bone3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2544,9 +2544,10 @@ MonoBehaviour:
   beachChest2: {fileID: 2055467442}
   mainHero2: {fileID: 919110405}
   mainHeroDig: {fileID: 359435375}
+  chest2: {fileID: 406352275}
   beachOpenChest3: {fileID: 1112380021}
   mainHero3: {fileID: 672228045}
-  mainHeroOpenChest: {fileID: 312381680}
+  chest3: {fileID: 312381680}
   buttonHero: {fileID: 2028006122}
   buttonBeach: {fileID: 107335850}
   buttonExplore: {fileID: 490287551}

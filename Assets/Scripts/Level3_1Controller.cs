@@ -39,9 +39,6 @@ public class Level3_1Controller : MonoBehaviour
             
             // Сохраняем результат прохождения
             SaveLoadManager.SaveLevelProgress("Level3_1", 1);
-            
-            // Переход к выбору уровней через 3 секунды
-            Invoke("LoadLevelSelect", 3f);
         }
         else
         {

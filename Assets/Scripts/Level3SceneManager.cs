@@ -21,11 +21,12 @@ public class Level3SceneManager : MonoBehaviour
     public GameObject beachChest2;
     public GameObject mainHero2;
     public GameObject mainHeroDig;
+    public GameObject chest2;
 
     [Header("Объекты сцены 3")]
     public GameObject beachOpenChest3;
     public GameObject mainHero3;
-    public GameObject mainHeroOpenChest;
+    public GameObject chest3;
 
     [Header("Кнопки действий")]
     public Button buttonHero;
@@ -93,11 +94,12 @@ public class Level3SceneManager : MonoBehaviour
         beachChest2.SetActive(false);
         mainHero2.SetActive(false);
         mainHeroDig.SetActive(false);
+        chest2.SetActive(false);
 
         // Сцена 3 - Пляж с открытым сундуком
         beachOpenChest3.SetActive(false);
         mainHero3.SetActive(false);
-        mainHeroOpenChest.SetActive(false);
+        chest3.SetActive(false);
     }
 
     void UpdateUI()
@@ -147,13 +149,12 @@ public class Level3SceneManager : MonoBehaviour
     {
         bool heroVisible = mainHero3.activeSelf;
         bool beachVisible = beachOpenChest3.activeSelf;
-        bool chestOpened = mainHeroOpenChest.activeSelf;
 
         buttonBeach.interactable = !beachVisible;
-        buttonHero.interactable = beachVisible && !heroVisible && !chestOpened;
+        buttonHero.interactable = beachVisible && !heroVisible;
         buttonExplore.interactable = false;
         buttonDig.interactable = false;
-        buttonOpenChest.interactable = heroVisible && beachVisible && levelController.DugSand && !chestOpened;
+        buttonOpenChest.interactable = heroVisible && beachVisible && levelController.DugSand;
     }
 
     // === МЕТОДЫ ДЛЯ КНОПОК ===
@@ -192,10 +193,12 @@ public class Level3SceneManager : MonoBehaviour
             {
                 // Если сундук уже выкопан, показываем пляж с сундуком
                 beachChest2.SetActive(true);
+                chest2.SetActive(true);
             }
             break;
             case 3:
                 beachOpenChest3.SetActive(true);
+                chest3.SetActive(true);
                 break;
         }
         UpdateUI();
@@ -228,6 +231,7 @@ public class Level3SceneManager : MonoBehaviour
 
             beach2.SetActive(false);
             beachChest2.SetActive(true);
+            chest2.SetActive(true);
 
             UpdateUI();
             Debug.Log("Сундук выкопан! Теперь можно его открыть.");
@@ -243,7 +247,7 @@ public class Level3SceneManager : MonoBehaviour
             levelController.OpenChest();
 
             mainHero3.SetActive(false);
-            mainHeroOpenChest.SetActive(true);
+            chest3.SetActive(true);
 
             UpdateUI();
             Debug.Log("ПОЗДРАВЛЯЕМ! Вы нашли сокровища!");

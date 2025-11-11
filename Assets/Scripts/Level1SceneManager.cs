@@ -358,10 +358,6 @@ public class Level1SceneManager : MonoBehaviour
         Debug.Log("Героя съедает акула!");
 
         badEnd.SetActive(true);
-        
-        // Ждем еще 2 секунды перед переходом в меню выбора уровней
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("LevelSelect");
     }
 
     // Корутина для показа хорошей концовки с задержкой
@@ -431,6 +427,5 @@ public class Level1SceneManager : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene("LevelSelect");
-        badEnd.SetActive(false);
     }
 }
