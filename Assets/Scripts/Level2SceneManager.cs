@@ -134,7 +134,7 @@ public class Level2SceneManager : MonoBehaviour
         bool compared = mainHeroCompare.activeSelf;
 
         buttonCabinet.interactable = !cabinetVisible;
-        buttonHero.interactable = cabinetVisible && !heroVisible && !legendExplored;
+        buttonHero.interactable = cabinetVisible && !heroVisible && !legendExplored && !compared;
         buttonExploreMap.interactable = false;
         buttonExploreLegend.interactable = heroVisible && cabinetVisible && mapExplored && !legendExplored && !compared;
         buttonCompare.interactable = heroVisible && cabinetVisible && mapExplored && !compared;
